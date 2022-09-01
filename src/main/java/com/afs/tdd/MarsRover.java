@@ -38,8 +38,10 @@ public class MarsRover {
             case "L":
             case "R":
                 changeDirection(command);
+                break;
             case "M":
                 move();
+                break;
         }
         return this;
     }
