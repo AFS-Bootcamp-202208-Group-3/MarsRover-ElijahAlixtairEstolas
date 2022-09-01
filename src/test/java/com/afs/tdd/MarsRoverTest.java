@@ -54,7 +54,7 @@ class MarsRoverTest {
     void should_turn_south_when_executeCommand_given_R_command() {
         //given
         MarsRover actualMarsRover = new MarsRover(0,0,EAST);
-        String command = LEFT;
+        String command = RIGHT;
         MarsRover expectedMarsRover = new MarsRover(0,0,SOUTH);
         //when
         actualMarsRover = actualMarsRover.executeCommand(command);
