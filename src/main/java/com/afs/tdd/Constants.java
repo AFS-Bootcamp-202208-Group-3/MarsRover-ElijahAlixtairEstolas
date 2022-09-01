@@ -6,4 +6,5 @@ public class Constants {
     static String LEFT = "L";
     static String NORTH  = "N";
     static String SOUTH = "S";
+    static String WEST = "W";
 }
