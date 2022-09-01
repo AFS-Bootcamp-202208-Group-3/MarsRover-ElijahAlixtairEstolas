@@ -65,8 +65,8 @@ class MarsRoverTest {
     void should_move_south_when_executeCommand_given_south_direction_and_move_command() {
         //given
         MarsRover actualMarsRover = new MarsRover(0,0,SOUTH);
-        String command = RIGHT;
-        MarsRover expectedMarsRover = new MarsRover(0,1,SOUTH);
+        String command = MOVE;
+        MarsRover expectedMarsRover = new MarsRover(0,-1,SOUTH);
         //when
         actualMarsRover = actualMarsRover.executeCommand(command);
         //then
