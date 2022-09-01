@@ -36,6 +36,7 @@ public class MarsRover {
     public MarsRover executeCommand(String command){
         switch(command){
             case "L":
+            case "R":
                 changeDirection(command);
         }
         return this;
@@ -68,6 +69,10 @@ public class MarsRover {
             bearing -= 90;
             if (bearing == -90)
                 bearing = 270;
+        }else if(command.equals(RIGHT)){
+            bearing +=90;
+            if(bearing == 360)
+                bearing = 0;
         }
     }
 
