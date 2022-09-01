@@ -83,5 +83,17 @@ class MarsRoverTest {
         //then
         assertTrue(expectedMarsRover.equals(actualMarsRover));
     }
+    @Test
+    void should_execute_consecutive_commands_when_executeCommand_given_turn_and_move_command() {
+        //given
+        MarsRover actualMarsRover = new MarsRover(0,0,NORTH);
+        MarsRover expectedMarsRover = new MarsRover(-1,0,WEST);
+        String command = LEFT;
+        actualMarsRover = actualMarsRover.executeCommand(command);
+        command = MOVE;
+        actualMarsRover.executeCommand(command);
+        //then
+        assertTrue(expectedMarsRover.equals(actualMarsRover));
+    }
 
 }
