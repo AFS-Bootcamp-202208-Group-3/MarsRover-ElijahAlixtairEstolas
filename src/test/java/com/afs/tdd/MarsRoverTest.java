@@ -72,5 +72,16 @@ class MarsRoverTest {
         //then
         assertTrue(expectedMarsRover.equals(actualMarsRover));
     }
+    @Test
+    void should_move_north_when_executeCommand_given_north_direction_and_move_command() {
+        //given
+        MarsRover actualMarsRover = new MarsRover(0,0,NORTH);
+        String command = MOVE;
+        MarsRover expectedMarsRover = new MarsRover(0,1,NORTH);
+        //when
+        actualMarsRover = actualMarsRover.executeCommand(command);
+        //then
+        assertTrue(expectedMarsRover.equals(actualMarsRover));
+    }
 
 }
