@@ -142,5 +142,15 @@ class MarsRoverTest {
         //then
         assertTrue(expectedMarsRover.equals(actualMarsRover));
     }
+    @Test
+    void should_execute_combined_moves_when_executeBatchCommands_given_commands_combined(){
+        //given
+        MarsRover expectedMarsRover= new MarsRover(0,-5,EAST);
+        MarsRover actualMarsRover = new MarsRover(0,0,NORTH);
+        String command = MOVE+RIGHT+RIGHT+MOVE+MOVE+MOVE+MOVE+MOVE+MOVE+LEFT;
+        actualMarsRover.executeBatchCommands(command);
+        //then
+        assertTrue(expectedMarsRover.equals(actualMarsRover));
+    }
 
 }
