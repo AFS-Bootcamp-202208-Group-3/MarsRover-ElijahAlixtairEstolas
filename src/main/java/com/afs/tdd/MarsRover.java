@@ -38,8 +38,27 @@ public class MarsRover {
             case "L":
             case "R":
                 changeDirection(command);
+            case "M":
+                move();
         }
         return this;
+    }
+
+    private void move() {
+        switch(direction){
+            case "S":
+                locationY-=1;
+                break;
+            case "N":
+                locationY+=1;
+                break;
+            case "E":
+                locationX+=1;
+                break;
+            case "W":
+                locationX-=1;
+                break;
+        }
     }
 
     private void changeDirection(String command) {
