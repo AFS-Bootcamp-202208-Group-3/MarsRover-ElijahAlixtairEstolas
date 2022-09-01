@@ -1,5 +1,10 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
@@ -33,7 +38,16 @@ public class MarsRover {
         }
     }
 
-    public MarsRover executeCommand(String command){
+    public MarsRover executeBatchCommands(String commands){
+        char charCommands[] = commands.toCharArray();
+        for (char command: charCommands) {
+            executeCommand(String.valueOf(command));
+        }
+        return this;
+    }
+
+    private MarsRover executeCommand(String command){
+        System.out.println(command);
         switch(command){
             case "L":
                 turnLeft(command);
