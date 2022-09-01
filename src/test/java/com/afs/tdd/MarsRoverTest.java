@@ -131,4 +131,16 @@ class MarsRoverTest {
         assertTrue(expectedMarsRover.equals(actualMarsRover));
     }
 
+
+    @Test
+    void should_execute_move_then_turn_right_when_executeBatchCommands_given_move_and_turn_commands_combined(){
+        //given
+        MarsRover actualMarsRover = new MarsRover(0,0,NORTH);
+        MarsRover expectedMarsRover = new MarsRover(0,1,EAST);
+        String command = MOVE+RIGHT;
+        actualMarsRover.executeBatchCommands(command);
+        //then
+        assertTrue(expectedMarsRover.equals(actualMarsRover));
+    }
+
 }
