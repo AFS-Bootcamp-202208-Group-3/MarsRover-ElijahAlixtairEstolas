@@ -36,14 +36,25 @@ public class MarsRover {
     public MarsRover executeCommand(String command){
         switch(command){
             case "L":
+                turnLeft(command);
+                break;
             case "R":
-                changeDirection(command);
+                turnRight(command);
                 break;
             case "M":
                 move();
                 break;
         }
         return this;
+    }
+
+    private String turnLeft(String command) {
+        changeDirection(command);
+        return direction;
+    }
+    private String turnRight(String command) {
+        changeDirection(command);
+        return direction;
     }
 
     private void move() {
