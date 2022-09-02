@@ -149,7 +149,7 @@ class MarsRoverTest {
         //given
         MarsRover expectedMarsRover= new MarsRover(0,-5,EAST);
         MarsRover actualMarsRover = new MarsRover(0,0,NORTH);
-        String command = MOVE+RIGHT+RIGHT+MOVE+MOVE+MOVE+MOVE+MOVE+MOVE+LEFT;
+        String command = "MRRMMMMMML";
         actualMarsRover.executeBatchCommands(command);
         //then
         assertEquals(expectedMarsRover, actualMarsRover);
