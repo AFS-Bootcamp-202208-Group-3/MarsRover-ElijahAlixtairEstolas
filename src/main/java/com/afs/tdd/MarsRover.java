@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
@@ -34,16 +36,13 @@ public class MarsRover {
     }
 
     public MarsRover executeBatchCommands(String commands){
-        char charCommands[] = commands.toCharArray();
-        for (char command: charCommands) {
-            executeCommand(String.valueOf(command));
-            //Arrays.asList(commands.split("");
-        }
+        Arrays.asList(commands.split("")).forEach(
+                    this::executeCommand
+                );
         return this;
     }
 
     private MarsRover executeCommand(String command){
-        System.out.println(command);
         switch(command){
             case LEFT:
                 turnLeft(command);
@@ -107,11 +106,11 @@ public class MarsRover {
     }
 
     private void changeBearing(String command) {
-        if(command.equals(LEFT)) {
+        if(LEFT.equals(command)) {
             bearing -= 90;
             if (bearing == -90)
                 bearing = 270;
-        }else if(command.equals(RIGHT)){
+        }else if(RIGHT.equals(command)){
             bearing +=90;
             if(bearing == 360)
                 bearing = 0;
