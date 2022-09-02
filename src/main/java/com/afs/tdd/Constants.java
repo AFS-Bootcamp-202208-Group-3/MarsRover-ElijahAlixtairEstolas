@@ -2,11 +2,11 @@ package com.afs.tdd;
 
 public class Constants {
 
-    static String LEFT = "L";
-    static String RIGHT = "R";
-    static String MOVE = "M";
-    static String EAST = "E";
-    static String NORTH  = "N";
-    static String SOUTH = "S";
-    static String WEST = "W";
+    static final String LEFT = "L";
+    static final String RIGHT = "R";
+    static final String MOVE = "M";
+    static final String EAST = "E";
+    static final String NORTH  = "N";
+    static final String SOUTH = "S";
+    static final String WEST = "W";
 }

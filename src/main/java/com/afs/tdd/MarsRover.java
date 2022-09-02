@@ -1,10 +1,5 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import static com.afs.tdd.Constants.*;
 
 public class MarsRover {
@@ -23,16 +18,16 @@ public class MarsRover {
 
     private void determineBearing() {
         switch (direction){
-            case "N":
+            case NORTH:
                 bearing = 0;
                 break;
-            case "E":
+            case EAST:
                 bearing = 90;
                 break;
-            case "S":
+            case SOUTH:
                 bearing = 180;
                 break;
-            case "W":
+            case WEST:
                 bearing = 270;
                 break;
         }
@@ -42,6 +37,7 @@ public class MarsRover {
         char charCommands[] = commands.toCharArray();
         for (char command: charCommands) {
             executeCommand(String.valueOf(command));
+            //Arrays.asList(commands.split("");
         }
         return this;
     }
@@ -49,13 +45,13 @@ public class MarsRover {
     private MarsRover executeCommand(String command){
         System.out.println(command);
         switch(command){
-            case "L":
+            case LEFT:
                 turnLeft(command);
                 break;
-            case "R":
+            case RIGHT:
                 turnRight(command);
                 break;
-            case "M":
+            case MOVE:
                 move();
                 break;
         }
@@ -73,16 +69,16 @@ public class MarsRover {
 
     private void move() {
         switch(direction){
-            case "S":
+            case SOUTH:
                 locationY-=1;
                 break;
-            case "N":
+            case NORTH:
                 locationY+=1;
                 break;
-            case "E":
+            case EAST:
                 locationX+=1;
                 break;
-            case "W":
+            case WEST:
                 locationX-=1;
                 break;
         }
