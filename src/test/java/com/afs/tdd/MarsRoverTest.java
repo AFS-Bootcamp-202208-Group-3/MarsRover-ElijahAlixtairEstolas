@@ -3,6 +3,7 @@ package com.afs.tdd;
 import org.junit.jupiter.api.Test;
 
 import static com.afs.tdd.Constants.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MarsRoverTest {
@@ -15,7 +16,8 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
+
     }
     @Test
     void should_turn_west_when_executeBatchCommands_given_L_command() {
@@ -26,7 +28,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_turn_north_when_executeBatchCommands_given_L_command() {
@@ -37,7 +39,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_turn_south_when_executeBatchCommands_given_L_command() {
@@ -48,7 +50,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_turn_south_when_executeBatchCommands_given_R_command() {
@@ -59,7 +61,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_move_south_when_executeBatchCommands_given_south_direction_and_move_command() {
@@ -70,7 +72,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_move_north_when_executeBatchCommands_given_north_direction_and_move_command() {
@@ -81,7 +83,7 @@ class MarsRoverTest {
         //when
         actualMarsRover = actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_execute_left_then_move_commands_when_executeBatchCommands_given_turn_and_move_command() {
@@ -93,7 +95,7 @@ class MarsRoverTest {
         command = MOVE;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_execute_right_then_move_commands_when_executeBatchCommands_given_turn_and_move_command() {
@@ -105,7 +107,7 @@ class MarsRoverTest {
         command = MOVE;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
 
     @Test
@@ -116,7 +118,7 @@ class MarsRoverTest {
         String command = MOVE;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_execute_move_then_turn_right_when_executeBatchCommands_given_move_and_turn_command(){
@@ -128,7 +130,7 @@ class MarsRoverTest {
         command = RIGHT;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
 
 
@@ -140,7 +142,7 @@ class MarsRoverTest {
         String command = MOVE+RIGHT;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
     @Test
     void should_execute_combined_moves_when_executeBatchCommands_given_commands_combined(){
@@ -150,7 +152,7 @@ class MarsRoverTest {
         String command = MOVE+RIGHT+RIGHT+MOVE+MOVE+MOVE+MOVE+MOVE+MOVE+LEFT;
         actualMarsRover.executeBatchCommands(command);
         //then
-        assertTrue(expectedMarsRover.equals(actualMarsRover));
+        assertEquals(expectedMarsRover, actualMarsRover);
     }
 
 }
